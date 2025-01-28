@@ -1,0 +1,1 @@
+- add a loading animation when the pages are loading for better ux
