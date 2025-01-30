@@ -1,13 +1,12 @@
-import { NextResponse } from "next/server";
-import type { NextApiRequest, NextApiResponse } from "next";
+import { NextRequest, NextResponse } from "next/server";
+
 
 type response = {
     message : string
 }
 
 export const dynamic = 'force-static';
-export async function GET(req : NextApiRequest,
-    res : NextApiResponse<response>
+export async function GET(req : NextRequest
 ){
     return NextResponse.json({
         message: "Akcelify for the win",
