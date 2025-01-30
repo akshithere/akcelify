@@ -11,7 +11,7 @@ export async function GET(){
             posts
         })
     }catch(err){
-        console.log("db se hi blogs fetch nahi kar paya", err);
+        console.log("could not fetch from the database", err);
         return NextResponse.json({
             success: false,
             message : "unable to fetch blogs"
