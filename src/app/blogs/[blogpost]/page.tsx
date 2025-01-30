@@ -9,7 +9,7 @@ export default async function Page({
   let blogPost = null;
 
   try {
-    const response = await axios.get(`/api/blog?slug=${slug}`);
+    const response = await axios.get(`https://akcelify.vercel.app/api/blog?slug=${slug}`);
     blogPost = response.data.data;
   } catch (error) {
     console.error("Error fetching blog post:", error);

@@ -10,7 +10,7 @@ interface Blog {
 export default async function Blogs() {
     let blogs: Blog[] = [];
     try {
-        const response = await axios.get<{ posts: Blog[] }>("/api/blogs");
+        const response = await axios.get<{ posts: Blog[] }>("http://akcelify.vercel.app/api/blogs");
         blogs = response.data.posts;
     } catch (error) {
         console.error("Error fetching blogs:", error);
