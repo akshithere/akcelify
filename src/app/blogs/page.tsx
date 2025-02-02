@@ -1,4 +1,13 @@
 import axios from "axios";
+import Link from "next/link";
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card"
 
 interface Blog {
     title: string;
@@ -10,24 +19,34 @@ interface Blog {
 export default async function Blogs() {
     let blogs: Blog[] = [];
     try {
-        const response = await axios.get<{ posts: Blog[] }>("http://akcelify.vercel.app/api/blogs");
+        const response = await axios.get<{ posts: Blog[] }>("http://akcelify.xyz/api/blogs");
         blogs = response.data.posts;
     } catch (error) {
         console.error("Error fetching blogs:", error);
     }
 
     return (
-        <div className="m-5">
+        <div className="my-10 mx-10 px-10">
+
             {blogs.map((post) => (
-                <div key={post.slug} className="flex flex-col mb-4 border-b pb-2">
-                    <div className="flex justify-between items-center">
-                        <h1 className="text-lg font-bold">{post.title}</h1>
-                        <h3 className="text-sm text-gray-500">
-                            {new Date(post.createdAt).toLocaleDateString()}
-                        </h3>
+                <Link key={post.slug} href = {`/blogs/${post.slug}`}>
+                    <div key={post.slug} className="my-5">
+                        <Card>
+                            <CardHeader>
+                                <CardTitle>{post.title}</CardTitle>
+                                <CardDescription>{post.createdAt}</CardDescription>
+                            </CardHeader>
+                            <CardContent>
+                                <p>{post.content}</p>
+                            </CardContent>
+                            <CardFooter>
+                                click and read more...
+                            </CardFooter>
+                        </Card>
                     </div>
-                    <div className="mt-2">{post.content}</div>
-                </div>
+                </Link>
+
+
             ))}
         </div>
     );
