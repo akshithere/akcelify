@@ -37,7 +37,7 @@ export default async function Blogs() {
                                 <CardDescription>{post.createdAt}</CardDescription>
                             </CardHeader>
                             <CardContent>
-                                <p>{post.content}</p>
+                                <p>{(post.content.length > 100) ? `${post.content.substring(0,400)}...` : post.content}</p>
                             </CardContent>
                             <CardFooter>
                                 click and read more...
