@@ -19,9 +19,7 @@ export default function Home() {
         OSDC for the win
       </p>
       <div className="md:max-w-screen border border-primary/15 p-3 rounded-lg cursor-text w-full mx-auto">
-          Go to the blogs section please ✨
-
-🐰💗🥺 🌸🌷🧸 🍓🥹💕 ✨💞🐻
+          Go to the blogs section ✨
 
       </div>
     </div>
