@@ -16,10 +16,10 @@ export default function Home() {
         </h1>
       </div>
       <p className="text-primary/80 max-w-lg text-center tracking-tight md:text-lg font-light">
-        OSDC for the win
+        I am Akshit. I am a Sophomore at JIIT Noida.
       </p>
       <div className="md:max-w-screen border border-primary/15 p-3 rounded-lg cursor-text w-full mx-auto">
-          Go to the blogs section ✨
+          I create websites for fun ✨
 
       </div>
     </div>
